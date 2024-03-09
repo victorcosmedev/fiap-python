@@ -43,3 +43,6 @@ modulo = 100 % 7
 potenciacao = a ** d
 
 z = ((2 + 3) * 5) - (2 ** 2) # 2 + 3 é realizado primeiro
+
+print("5" * 10)
+print("5" + "2")
