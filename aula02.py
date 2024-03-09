@@ -42,3 +42,4 @@ divisao_inteiro = 100 // 7 # // é usado para que a divisão retorne inteiro
 modulo = 100 % 7
 potenciacao = a ** d
 
+z = ((2 + 3) * 5) - (2 ** 2) # 2 + 3 é realizado primeiro
