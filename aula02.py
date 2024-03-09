@@ -46,3 +46,9 @@ z = ((2 + 3) * 5) - (2 ** 2) # 2 + 3 é realizado primeiro
 
 print("5" * 10)
 print("5" + "2")
+
+i = 1
+i += 1
+print(i)
+i += 6
+print(i)
