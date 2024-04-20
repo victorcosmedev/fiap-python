@@ -1,59 +1,18 @@
-def notas_a_serem_usadas(notas):
+def notas_a_serem_usadas(*notas):
     notas = list(notas)
     menor_nota = min(notas)
     notas.remove(menor_nota)
 
     return notas
 
-def media_semestral():
-    cp1 *= 0.1
-    cp2 *= 0.1
-    ch1 *= 0.1
-    ch2 *= 0.1
-    gs *= 0.6
+def media_anual(
+    cp11, cp21, cp31, sp1, sp2, gs1,
+    cp12, cp22, cp32, sp3, sp4, gs2):
+    
+    cp1 = notas_a_serem_usadas(cp11, cp21, cp32)
+    cp2 = notas_a_serem_usadas(cp12, cp22, cp32)
 
-    media_semestral = cp1 + cp2 + ch1 + ch2 + gs
-    return media_semestral
+    s1 = cp1[0] * .1 + cp1[1] * .1 + sp1 * .1 + sp2 * .1 + gs1 * .6
+    s2 = cp2[0] * .1 + cp2[1] * .1 + sp3 * .1 + sp4 * .1 + gs2 * .6
 
-boletim_anual = (
-    {
-        'cp1': 8.0,
-        'cp2': 9.0,
-        'cp3': 10.0,
-        'ch1': 5.0,
-        'ch2': 7.5,
-        'gs': 10.0,
-    },
-    {
-        'cp1': 5.0,
-        'cp2': 10.0,
-        'cp3': 7.0,
-        'ch1': 4.0,
-        'ch2': 4.5,
-        'gs': 8.0,
-    }
-)
-
-
-def media_anual(*notas):
-    medias = []
-    notas_cp = []
-    notas_ch = []
-
-    for boletim in boletim_anual:
-        for chave, valor in boletim.items():
-
-            if chave[:2] == 'cp':
-                notas_cp.append(valor)
-            elif chave[:2] == 'ch':
-                notas_ch.append(valor)
-            else:
-                gs = valor
-
-            notas_cp = notas_a_serem_usadas(notas_cp)
-            notas_ch = []
-
-media_anual(boletim_anual)
-
-
-
+    return s1 * .4 + s2 * .6
