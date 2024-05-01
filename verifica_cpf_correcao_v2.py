@@ -56,5 +56,5 @@ def gerar_cpf(uf=None):
     return cpf_base
 
 
-cpf = gerar_cpf('RS')
+cpf = gerar_cpf('SP')
 print(cpf, validar_cpf(cpf))
