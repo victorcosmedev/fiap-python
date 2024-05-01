@@ -6,8 +6,10 @@ def define_digito(soma):
         digito = 11 - resto_divisao
         return digito
 
-def calcula_cpf(cpf_sem_digitos, fator_cpf):
+
+def calcula_cpf(cpf_sem_digitos):
     soma = 0
+    fator_cpf = [10, 9, 8, 7, 6, 5, 4, 3, 2]
     for digito, multiplicador in zip(cpf_sem_digitos, fator_cpf):
         soma += digito * multiplicador
 
@@ -23,12 +25,17 @@ def calcula_cpf(cpf_sem_digitos, fator_cpf):
 
     return cpf_com_digitos
 
+
+cpf_inserido = "34487846803"
+cpf_inserido = list(cpf_inserido)
+cpf_inserido = [int(i) for i in cpf_inserido]
+
+
+cpf_inserido_sem_digitos = cpf_inserido[:-2]
+print(cpf_inserido_sem_digitos)
 cpf_sem_digitos = [2, 8, 0, 0, 1, 2, 3, 8, 9]
 fator_cpf = [10, 9, 8, 7, 6, 5, 4, 3, 2]
 cpf_com_digitos = cpf_sem_digitos
 
 
-
-print(calcula_cpf(cpf_sem_digitos, fator_cpf))    
-
-
+print(calcula_cpf(cpf_sem_digitos, fator_cpf))
